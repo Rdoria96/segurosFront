@@ -17,6 +17,7 @@ import { PagosComponent } from './components/pagos/pagos.component';
 import { SiniestroComponent } from './components/siniestro/siniestro.component';
 import { ReaseguradoraComponent } from './components/reaseguradora/reaseguradora.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ReportesComponent } from './components/reportes/reportes.component';
     MaterialModule,
     LayoutModule,
     ReactiveFormsModule,
-    NavbarModule
+    NavbarModule,
+    HttpClientModule
 
 
   ],
