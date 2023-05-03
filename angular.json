@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "segurosFront": {
+    "Veterinaria-Front": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,20 +17,32 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/seguros-front",
+            "outputPath": "dist/veterinaria-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
+=======
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css"
+>>>>>>> a390f969f77c63d076998e2be4a035529f0c19cf
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -65,10 +81,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "segurosFront:build:production"
+              "browserTarget": "Veterinaria-Front:build:production"
             },
             "development": {
-              "browserTarget": "segurosFront:build:development"
+              "browserTarget": "Veterinaria-Front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +92,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "segurosFront:build"
+            "browserTarget": "Veterinaria-Front:build"
           }
         },
         "test": {
@@ -86,18 +102,27 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
+=======
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
+>>>>>>> a390f969f77c63d076998e2be4a035529f0c19cf
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
