@@ -11,23 +11,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.0",
-<<<<<<< HEAD
-    "@angular/cdk": "^13.0.0",
-=======
     "@angular/cdk": "~13.0.0-next.7+89.sha-a662737",
->>>>>>> a390f969f77c63d076998e2be4a035529f0c19cf
     "@angular/common": "^14.2.0",
     "@angular/compiler": "^14.2.0",
     "@types/datatables.net": "^1.10.22",
     "@angular/core": "^14.2.0",
     "@angular/forms": "^14.2.0",
-<<<<<<< HEAD
-    "@angular/material": "^13.0.0",
-    "@angular/platform-browser": "^14.2.0",
-    "@angular/platform-browser-dynamic": "^14.2.0",
-    "@angular/router": "^14.2.0",
-    "admin-lte": "3.2",
-=======
     "@angular/material": "~13.0.0-next.7+89.sha-a662737",
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
@@ -36,7 +25,6 @@
     "@popperjs/core": "^2.11.5",
     "@types/jquery": "^3.5.14",
     "angular-datatables": "^13.1.0",
->>>>>>> a390f969f77c63d076998e2be4a035529f0c19cf
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "datatables.net": "^1.12.1",

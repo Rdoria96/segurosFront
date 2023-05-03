@@ -3,10 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SegurosComponent } from './component/seguros/seguros.component';
-=======
 import { MaterialModule } from './material/material.module';
 import { OwnerComponent } from './owner/owner.component';
 import { PetComponent } from './pet/pet.component';
@@ -15,28 +11,32 @@ import { LayoutComponent } from './layout/layout.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarModule } from './navbar/navbar.module';
+import { SegurosComponent } from './components/seguros/seguros.component';
+import { TomadorComponent } from './components/tomador/tomador.component';
+import { PagosComponent } from './components/pagos/pagos.component';
+import { SiniestroComponent } from './components/siniestro/siniestro.component';
+import { ReaseguradoraComponent } from './components/reaseguradora/reaseguradora.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
 
->>>>>>> a390f969f77c63d076998e2be4a035529f0c19cf
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    SegurosComponent
-=======
     OwnerComponent,
     PetComponent,
     HomeComponent,
-    LayoutComponent
+    LayoutComponent,
+    SegurosComponent,
+    TomadorComponent,
+    PagosComponent,
+    SiniestroComponent,
+    ReaseguradoraComponent,
+    ReportesComponent
 
->>>>>>> a390f969f77c63d076998e2be4a035529f0c19cf
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    BrowserAnimationsModule
-=======
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
@@ -45,7 +45,6 @@ import { NavbarModule } from './navbar/navbar.module';
     NavbarModule
 
 
->>>>>>> a390f969f77c63d076998e2be4a035529f0c19cf
   ],
   providers: [],
   bootstrap: [AppComponent]

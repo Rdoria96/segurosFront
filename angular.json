@@ -28,14 +28,9 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.css"
-=======
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/datatables.net-dt/css/jquery.dataTables.css"
->>>>>>> a390f969f77c63d076998e2be4a035529f0c19cf
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.slim.min.js",
@@ -108,13 +103,8 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.css"
-=======
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
->>>>>>> a390f969f77c63d076998e2be4a035529f0c19cf
             ],
             "scripts": []
           }

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   login() {
-    if (this.username === 'demo.demo' && this.password === 'jupiter48') {
+    if (this.username === 'admin' && this.password === '1234') {
       this.router.navigate(['/home']);
     } else {
       alert('Credenciales incorrectas. Por favor intente de nuevo.');
