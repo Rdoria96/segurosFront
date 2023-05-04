@@ -5,10 +5,17 @@ justify-content: center;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 margin: 20px;
 }
+
+
 .formulario{
+
+
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
+
+
 
 .botonGuardar{
     padding-top: 15px;

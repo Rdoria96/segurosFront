@@ -3,24 +3,27 @@
 
     <form class="formulario" [formGroup]="formGroup">
 
-        <mat-form-field appearance="fill">
-            <mat-label>NIT</mat-label>
-            <input matInput type="text" formControlName ="nit">
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-            <mat-label>Razon social</mat-label>
-            <input matInput type="text" formControlName ="razon_social">
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
+
+
+            <mat-form-field appearance="fill" class="imputformulario">
+                <mat-label>NIT</mat-label>
+                <input matInput type="text" formControlName="nit">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill" class="imputformulario">
+                <mat-label>Razon social</mat-label>
+                <input matInput type="text" formControlName="razon_social">
+            </mat-form-field>
+            <br>
+
+        <mat-form-field appearance="fill" class="imputformulario">
             <mat-label>Monto del seguro</mat-label>
-            <input matInput type="numeric" formControlName ="monto_seguro">
+            <input matInput type="numeric" formControlName="monto_seguro">
         </mat-form-field>
         <br>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="imputformulario">
             <mat-label>Porcentaje de cobertura </mat-label>
-            <input matInput type="numeric" formControlName ="porcentaje_cober">
+            <input matInput type="numeric" formControlName="porcentaje_cober">
         </mat-form-field>
         <br>
         <div class="botonGuardar">
@@ -68,10 +71,12 @@
             <th mat-header-cell *matHeaderCellDef> Accion</th>
             <td mat-cell *matCellDef="let element">
 
-                        <button mat-icon-button color="primary" (click)="cargarFormulario(element)"><mat-icon>edit</mat-icon></button>
- 
-                        <button mat-icon-button color="warn" (click)="eliminar(element.nmid)"><mat-icon>delete</mat-icon></button>
-             
+                <button mat-icon-button color="primary"
+                    (click)="cargarFormulario(element)"><mat-icon>edit</mat-icon></button>
+
+                <button mat-icon-button color="warn"
+                    (click)="eliminar(element.nmid)"><mat-icon>delete</mat-icon></button>
+
 
             </td>
         </ng-container>

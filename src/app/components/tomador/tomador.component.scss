@@ -8,7 +8,10 @@
     .formulario{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+    }
+
+    .imputformulario{
+        margin-right: 1%;
     }
     
     .botonGuardar{
