@@ -44,13 +44,13 @@ export class SegurosComponent implements OnInit {
 
     //Listar tomador
     let arraytomador: Array<Tomador> = [];
-    this.servicest.getall().subscribe(datos => {
+    this.servicest.getTomador().subscribe(datos => {
       this.datosTomador = datos.dato;
       console.log("Pruebas", datos)
     })
 
     let arrayaseguradora:Array<Reaseguradora> =[];
-    this.servicesr.getAll().subscribe(datos=>{
+    this.servicesr.getReaseguradora().subscribe(datos=>{
       this.datosReaseguradora= datos.dato;
     })
   }

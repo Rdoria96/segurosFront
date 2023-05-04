@@ -73,7 +73,7 @@
     <tr style="text-align:center;" *ngFor="let item of  datoSeguro">
       <td style="text-align:center;">{{item.nmid}}</td>
       <td style="text-align:center;">{{item.tipo_seguro}}</td>
-      <td style="text-align:center;">{{item.valor}}</td>
+      <td style="text-align:center;">{{'$'+item.valor}}</td>
       <td style="text-align:center;">{{item.descripcion}}</td>
       <td style="text-align:center;">{{item.f_inicial}}</td>
       <td style="text-align:center;">{{item.f_final}}</td>

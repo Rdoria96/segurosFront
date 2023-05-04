@@ -5,6 +5,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/components/login/login.component';
 import { NavbarComponent } from './navbar/components/navbar/navbar.component';
 import { SegurosComponent } from './components/seguros/seguros.component';
+import { ReaseguradoraComponent } from './components/reaseguradora/reaseguradora.component';
+import { TomadorComponent } from './components/tomador/tomador.component';
 const routes: Routes = [
 
   {
@@ -25,9 +27,21 @@ const routes: Routes = [
         component: NavbarComponent
       },
       {
+
         path: 'seguros',
         component: SegurosComponent
-      }
+      },
+      {
+        path: 'reaseguradora',
+        component: ReaseguradoraComponent
+      },
+      {
+        path: 'tomador',
+        component: TomadorComponent
+
+      },
+      
+
 
     ]
   },

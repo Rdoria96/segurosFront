@@ -1,0 +1,33 @@
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 20px;
+    }
+    .formulario{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .imputformulario{
+        margin-right: 1%;
+    }
+    
+    .botonGuardar{
+        padding-top: 15px;
+    }
+    
+    .acciones{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+
+    .mat-datepicker-toggle{
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: -12px;
+      
+      }

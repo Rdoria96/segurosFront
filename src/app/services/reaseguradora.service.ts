@@ -1,17 +1,30 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Reaseguradora } from '../interfaces/reaseguradora';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReaseguradoraService {
 
-  servidor ='http://localhost:8080/api'
-  constructor(private servicio: HttpClient) { }
+  constructor(private service: HttpClient) { }
+  server = "http://localhost:8080/api";
 
-  getAll():Observable<any>{
-    return this.servicio.get(`${this.servidor}/reaseguradora/mostrarreaseguradora`);
+  getReaseguradora():Observable<any>{
+    return this.service.get( `${this.server}/reaseguradora/mostrarreaseguradora`);
+
   }
-  
+
+deleteReaseguradora(nmid:number):Observable<any>{
+  return this.service.delete(`${this.server}/reaseguradora/deletereaseguradora/${nmid}`);
+}
+
+
+SaveorUpdate(rea:Reaseguradora){
+  return this.service.post<Reaseguradora>(`${this.server}/reaseguradora/createreaseguradora`,rea);
+
+
+}
+
 }
