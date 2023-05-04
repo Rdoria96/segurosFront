@@ -75,7 +75,7 @@ export class ReaseguradoraComponent implements OnInit {
     }
   }
 
-
+//Cargar el formulario
 
   cargarFormulario(datos:{nmid:any; nit:any; razon_social:any;monto_seguro:any;porcentaje_cober:any}) {
     this.formGroup.setValue({    
