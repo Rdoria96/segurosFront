@@ -20,7 +20,7 @@ export class SegurosComponent implements OnInit {
   datoSeguro: Array<Seguros> = [];
   datosTomador: any;
   datosReaseguradora: any;
-  constructor(private route: ActivatedRoute, private fb: FormBuilder, private router: Router, private services: SegurosService, private servicest: TomadorService,private servicesr: ReaseguradoraService, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private fb: FormBuilder, private router: Router, private services: SegurosService, private servicest: TomadorService, private servicesr: ReaseguradoraService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
@@ -49,9 +49,9 @@ export class SegurosComponent implements OnInit {
       console.log("Pruebas", datos)
     })
 
-    let arrayaseguradora:Array<Reaseguradora> =[];
-    this.servicesr.getReaseguradora().subscribe(datos=>{
-      this.datosReaseguradora= datos.dato;
+    let arrayaseguradora: Array<Reaseguradora> = [];
+    this.servicesr.getReaseguradora().subscribe(datos => {
+      this.datosReaseguradora = datos.dato;
     })
   }
 
@@ -64,18 +64,19 @@ export class SegurosComponent implements OnInit {
         documento: '',
         tipo_doc: '',
         nombre: '',
-        apellido:'',
+        apellido: '',
+        direccion: '',
         telefono: '',
         ocupacion: '',
         correo: '',
         f_naci: ''
       }
-      const rease: Reaseguradora ={
+      const rease: Reaseguradora = {
         nmid: this.myForm.get('reaseguradora')?.value,
         nit: '',
-        razon_social:'',
+        razon_social: '',
         monto_seguro: 0,
-        porcentaje_cober:0
+        porcentaje_cober: 0
       }
       let parametros: any;
       parametros = {

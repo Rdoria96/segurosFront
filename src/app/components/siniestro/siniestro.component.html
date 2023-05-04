@@ -1,1 +1,108 @@
-<p>siniestro works!</p>
+<!--  START MODAL -->
+
+<ng-template class="template" #content let-c="close" let-cerrarModal="dismiss">
+  <form [formGroup]="myForm" (ngSubmit)="guardar(myForm)">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Control - Siniestro</h4>
+      <button title="Cerrar" (click)="refresh()" type="button" class="btn-close" (click)="cerrarModal('Cross click')"
+        aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="tipo_siniestro">
+        <mat-icon class="material-icons icons">wheelchair_pickup</mat-icon>
+        <input class="controls" formControlName="tipo_siniestro" type="text" placeholder="Ingrese el siniestro..."
+          required />
+      </div>
+
+      <div class="f_siniestro">
+        <mat-icon class="material-icons icons">insert_invitation</mat-icon>
+        <input title="Fecha - siniestro" class="controls1" formControlName="f_siniestro" required type="date">
+      </div>
+
+      <div class="lugar">
+        <mat-icon class="material-icons icons">meeting_room</mat-icon>
+        <input class="controls" formControlName="lugar" type="text" required placeholder="Lugar del siniestro...">
+      </div>
+
+      <div class="Tomador">
+        <mat-icon class="material-icons icons">face</mat-icon>
+        <select title="Tomador" class="option" formControlName="tomador" name="tomador">
+          <option disabled [ngValue]="null" selected>Seleccione - Tomador</option>
+          <option  *ngFor="let item of datosTomador" [ngValue]="item.nmid">{{  item.documento  }}</option>
+        </select>
+      </div>
+
+
+    </div>
+
+    <div class="modal-footer">
+      <button [disabled]="myForm.invalid" title="Guardar y agregar" type="submit" class="save">
+        <mat-icon class="material-icons icon-button">save add</mat-icon>
+      </button>
+
+      <button [disabled]="myForm.invalid" (click)="refresh()" (click)="cerrarModal('Cross click')" title="Guardar y salir"
+        type="submit" class="save-exit">
+        <mat-icon class="material-icons icon-button">save subdirectory_arrow_right</mat-icon>
+      </button>
+
+      <button class="close" type="button" (click)="refresh()" (click)="cerrarModal('Cross click')">
+        Cancelar
+      </button>
+
+    </div>
+  </form>
+</ng-template>
+<!-- END MODAL -->
+
+
+
+
+<!-- START VIEW PRINCIPAL -->
+<div class="titulo">
+  <h3>Control</h3>
+</div>
+<br>
+<input class="form_control" id="filter" type="text" #myInput placeholder='Buscar...' [(ngModel)]="filterPost" name="filterPosts">
+
+<button class="lanzar" (click)="open(content)">
+  Nuevo<mat-icon class="material-icons icon-add">add_circle</mat-icon>
+</button>
+
+<table id="table" class="table table-bordered hover table-borderless">
+  <thead>
+    <tr>
+      <th style="text-align:center">#</th>
+      <th style="text-align:center">Tipo siniestro</th>
+      <th style="text-align:center">Fecha siniestro</th>
+      <th style="text-align:center">Lugar</th>
+      <th style="text-align:center">Tomador</th>
+      <th style="text-align:center">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="text-align:center;" *ngFor="let item of datosSiniestro | siniestro:filterPost">
+
+      <td style="margin-top: 3%;">{{item.nmid}}</td>
+      <td style="margin-top: 3%;">{{item.tipo_siniestro}}</td>
+      <td style="margin-top: 3%;">{{item.f_siniestro}}</td>
+      <td style="margin-top: 3%;">{{item.lugar}}</td>
+      <td style="margin-top: 3%;">{{item.documento }}</td>
+      <td>
+        <button class="edit"  (click)="openEdit(content); editar(item)">
+          <abbr title="Editar">
+            <mat-icon class="material-icons">edit</mat-icon>
+          </abbr>
+        </button>
+
+        <button class="delete" (click)="eliminara(item)">
+          <abbr title="Eliminar">
+            <mat-icon>delete</mat-icon>
+          </abbr>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--END VIEW PRINCIPAL-->

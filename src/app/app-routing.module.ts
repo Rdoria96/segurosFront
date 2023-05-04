@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/components/navbar/navbar.component';
 import { SegurosComponent } from './components/seguros/seguros.component';
 import { ReaseguradoraComponent } from './components/reaseguradora/reaseguradora.component';
 import { TomadorComponent } from './components/tomador/tomador.component';
+import { SiniestroComponent } from './components/siniestro/siniestro.component';
 const routes: Routes = [
 
   {
@@ -40,8 +41,16 @@ const routes: Routes = [
         component: TomadorComponent
 
       },
-      
+            {
+        path: 'tomador',
+        component: TomadorComponent
 
+      },
+
+      {
+        path: 'siniestro',
+        component: SiniestroComponent
+      }
 
     ]
   },

@@ -59,7 +59,7 @@
         <!-- Symbol Column -->
         <ng-container matColumnDef="monto_seguro">
             <th mat-header-cell *matHeaderCellDef> Monto del seguro </th>
-            <td mat-cell *matCellDef="let element"> {{element.monto_seguro}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.monto_seguro +'%'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="porcentaje_cober">

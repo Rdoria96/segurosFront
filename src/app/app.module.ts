@@ -18,6 +18,7 @@ import { SiniestroComponent } from './components/siniestro/siniestro.component';
 import { ReaseguradoraComponent } from './components/reaseguradora/reaseguradora.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SiniestroPipe } from './pipes/siniestro.pipe';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     PagosComponent,
     SiniestroComponent,
     ReaseguradoraComponent,
-    ReportesComponent
+    ReportesComponent,
+    SiniestroPipe
 
   ],
   imports: [
