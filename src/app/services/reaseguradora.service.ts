@@ -22,8 +22,10 @@ deleteReaseguradora(nmid:number):Observable<any>{
 
 
 SaveorUpdate(rea:Reaseguradora){
-  return this.service.post<Reaseguradora>(`${this.server}/reaseguradora/createreaseguradora/`,rea);
+  return this.service.post<Reaseguradora>(`${this.server}/reaseguradora/createreaseguradora`,rea);
   
 
 }
+
+
 }

@@ -24,7 +24,7 @@
         </mat-form-field>
         <br>
         <div class="botonGuardar">
-            <button mat-raised-button color="primary">Guardar</button>
+            <button mat-raised-button color="primary" (click)="saveAseguradora(formGroup)">Guardar</button>
         </div>
 
     </form>
@@ -68,7 +68,7 @@
             <th mat-header-cell *matHeaderCellDef> Accion</th>
             <td mat-cell *matCellDef="let element">
 
-                        <button mat-icon-button color="primary"><mat-icon>edit</mat-icon></button>
+                        <button mat-icon-button color="primary" (click)="cargarFormulario(element)"><mat-icon>edit</mat-icon></button>
  
                         <button mat-icon-button color="warn" (click)="eliminar(element.nmid)"><mat-icon>delete</mat-icon></button>
              
