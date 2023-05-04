@@ -1,1 +1,92 @@
-<p>seguros works!</p>
+<div class="container">
+  <form [formGroup]="myForm" (ngSubmit)="guardar(myForm)">
+    <div class="header">
+      <h1 class="title">REGISTRO SEGUROS</h1>
+    </div>
+    <div class="seguro">
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo seguro</mat-label>
+        <input matInput formControlName="tipo_seguro">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Valor seguro</mat-label>
+        <input matInput formControlName="valor">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Descripcion</mat-label>
+        <input matInput formControlName="descripcion">
+      </mat-form-field>
+      <mat-form-field color="accent" appearance="fill">
+        <mat-label>Fecha inicial</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="f_inicial">
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field color="accent" appearance="fill">
+        <mat-label>Fecha final</mat-label>
+        <input matInput [matDatepicker]="picker2" formControlName="f_final">
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 color="primary"></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Tomador</mat-label>
+        <mat-select formControlName="tomador">
+          <mat-option *ngFor="let t of datosTomador" [value]="t.nmid">
+            {{t.documento}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Reaseguradora</mat-label>
+        <mat-select formControlName="reaseguradora">
+          <mat-option *ngFor="let r of datosReaseguradora" [value]="r.nmid">
+            {{r.razon_social}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="contr">
+      <button type="submit" class="btn1" (click)="refresh()">Guardar</button>
+    </div>
+
+  </form>
+
+
+</div>
+
+
+<table id="table" class="table table-bordered hover table-borderless">
+  <thead>
+    <tr>
+      <th style="text-align:center">#</th>
+      <th style="text-align:center">Tipo seguro</th>
+      <th style="text-align:center">Valor</th>
+      <th style="text-align:center">Descripcion</th>
+      <th style="text-align:center">Fecha inicial</th>
+      <th style="text-align:center">Fecha final</th>
+      <th style="text-align:center">Tomador</th>
+      <th style="text-align:center">Reaseguradora</th>
+      <th style="text-align:center">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="text-align:center;" *ngFor="let item of  datoSeguro">
+      <td style="text-align:center;">{{item.nmid}}</td>
+      <td style="text-align:center;">{{item.tipo_seguro}}</td>
+      <td style="text-align:center;">{{item.valor}}</td>
+      <td style="text-align:center;">{{item.descripcion}}</td>
+      <td style="text-align:center;">{{item.f_inicial}}</td>
+      <td style="text-align:center;">{{item.f_final}}</td>
+      <td style="text-align:center;">{{item.documento}}</td>
+      <td style="text-align:center;">{{item.razon_social}}</td>
+      <td style="text-align:center;">
+        <button class="edit" mat-icon-button color="primary" (click)="mostrar(item)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button class="edit" mat-icon-button color="warn" (click)="eliminar(item.nmid)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
