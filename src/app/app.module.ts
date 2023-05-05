@@ -19,7 +19,7 @@ import { ReaseguradoraComponent } from './components/reaseguradora/reaseguradora
 import { ReportesComponent } from './components/reportes/reportes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SiniestroPipe } from './pipes/siniestro.pipe';
-
+import { BeneficiarioComponent } from './components/beneficiario/beneficiario.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { SiniestroPipe } from './pipes/siniestro.pipe';
     SiniestroComponent,
     ReaseguradoraComponent,
     ReportesComponent,
-    SiniestroPipe
+    SiniestroPipe,
+    BeneficiarioComponent
 
   ],
   imports: [

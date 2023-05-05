@@ -8,6 +8,7 @@ import { SegurosComponent } from './components/seguros/seguros.component';
 import { ReaseguradoraComponent } from './components/reaseguradora/reaseguradora.component';
 import { TomadorComponent } from './components/tomador/tomador.component';
 import { SiniestroComponent } from './components/siniestro/siniestro.component';
+import { BeneficiarioComponent } from './components/beneficiario/beneficiario.component';
 const routes: Routes = [
 
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
       {
         path: 'siniestro',
         component: SiniestroComponent
+      }
+      ,{
+        path: 'beneficiario',
+        component: BeneficiarioComponent
       }
 
     ]

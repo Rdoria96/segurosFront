@@ -97,6 +97,7 @@ export class BeneficiarioComponent implements OnInit {
           tipo_doc: '',
           nombre: '',
           apellido:'',
+          direccion: '',
           telefono: '',
           ocupacion: '',
           correo: '',
