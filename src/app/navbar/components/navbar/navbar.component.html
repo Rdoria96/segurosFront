@@ -1,0 +1,86 @@
+<div class="toolbar-container">
+  <mat-toolbar class="header-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon class="icon">menu</mat-icon>
+    </button>
+    <mat-icon class="icon-person">person</mat-icon>
+    <p class="user">Aseguradora</p>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav class="sidenav">
+      <mat-nav-list class="nav-list">
+        <div>
+          <img src="../../assets/Utils/LogoSoftcaribbean.png" class="menu-logo">
+        </div>
+        <div class="items__container">
+          <div class="header">
+            <div class="lista">
+              <nav class="nav">
+                <button class="boton1 btn">
+                  <mat-icon class="icon">home</mat-icon> MENU
+                </button>
+                <ul class="lista">
+                  <li class="menuHijo">
+                    <a class="btn" routerLink="/tomador">
+                      <mat-icon class="icon">pets</mat-icon> TOMADOR
+                    </a>
+                  </li>
+                </ul>
+                <ul class="lista">
+                  <li class="menuHijo">
+                    <a class="btn" routerLink="/beneficiario">
+                      <mat-icon class="icon">person</mat-icon>BENEFICIARIO
+                    </a>
+                  </li>
+                </ul>
+                <ul class="lista">
+                  <li class="menuHijo">
+                    <a class="btn" routerLink="/siniestro">
+                      <mat-icon class="icon">local_hospital</mat-icon>SINIESTRO
+                    </a>
+                  </li>
+                </ul>
+                <ul class="lista">
+                  <li class="menuHijo">
+                    <a class="btn" routerLink="/seguros">
+                      <mat-icon class="icon">person</mat-icon>SEGUROS
+                    </a>
+                  </li>
+                </ul>
+                <ul class="lista">
+                  <li class="menuHijo">
+                    <a class="btn" routerLink="/reaseguradora">
+                      <mat-icon class="icon">person</mat-icon>REASEGURADORA
+                    </a>
+                  </li>
+                </ul>
+                <ul class="lista">
+                  <li class="menuHijo" routerLink="/pagos">
+                    <a class="btn">
+                      <mat-icon class="icon">person</mat-icon>PAGOS
+                    </a>
+                  </li>
+                </ul>
+                <ul class="lista">
+                  <li class="menuHijo">
+                    <a class="btn">
+                      <mat-icon class="icon">person</mat-icon>REPORTES
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <br>
+
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+      <br><br><br>
+
+      <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
