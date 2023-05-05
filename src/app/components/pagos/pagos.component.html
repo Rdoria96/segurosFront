@@ -18,7 +18,7 @@
                 <mat-datepicker #picker1 color="warn"></mat-datepicker>
             </mat-form-field>
             <div class="butom-group">
-                <button mat-raised-button color="primary" (click)="liquidar(formGroup)">Liquidar</button>
+                <button mat-raised-button color="primary" (click)="liquidar(formGroup)"><mat-icon>playlist_add_check</mat-icon> Liquidar</button>
             </div>
         </div>
         
@@ -41,53 +41,53 @@
                 </mat-select>
             </mat-form-field>
             <div class="butom-group">
-                <button mat-raised-button color="primary">Buscar</button>
+                <button mat-raised-button color="primary" (click)="filtrar(formGroup)"><mat-icon>search</mat-icon> Buscar</button>
+                <button mat-raised-button color="primary" (click)="refresh()"><mat-icon>autorenew</mat-icon>Limpiar</button>
             </div>
         </div>
     </form>
 
-    <table mat-table [dataSource]="datosPagos" class="mat-elevation-z8" style="width: 90%;">
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="datosPagos" style="width: 100%;">
 
-        <ng-container matColumnDef="documento">
-            <th mat-header-cell *matHeaderCellDef> Documento </th>
-            <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="nombretom">
-            <th mat-header-cell *matHeaderCellDef> Nombre tomador </th>
-            <td mat-cell *matCellDef="let element"> {{element.nombretom}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="f_pago">
-            <th mat-header-cell *matHeaderCellDef> Fache de pago </th>
-            <td mat-cell *matCellDef="let element"> {{element.f_pago}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="cuotas">
-            <th mat-header-cell *matHeaderCellDef> Nuemero de cuota </th>
-            <td mat-cell *matCellDef="let element"> {{element.cuotas}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="valor_cmes">
-            <th mat-header-cell *matHeaderCellDef> Valor cuota mes </th>
-            <td mat-cell *matCellDef="let element"> {{element.valor_cmes}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="nmid_seguro">
-            <th mat-header-cell *matHeaderCellDef> Seguro </th>
-            <td mat-cell *matCellDef="let element"> {{element.nmid_seguro}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="accion">
-            <th mat-header-cell *matHeaderCellDef> accion </th>
-            <td mat-cell *matCellDef="let element">
-                <button mat-icon-button color="primary"><mat-icon>edit</mat-icon></button>
-                <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
-            </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+            <ng-container matColumnDef="documento">
+                <th mat-header-cell *matHeaderCellDef> Documento </th>
+                <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="nombretom">
+                <th mat-header-cell *matHeaderCellDef> Nombre tomador </th>
+                <td mat-cell *matCellDef="let element"> {{element.nombretom}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="f_pago">
+                <th mat-header-cell *matHeaderCellDef> Fache de pago </th>
+                <td mat-cell *matCellDef="let element"> {{element.f_pago}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="cuotas">
+                <th mat-header-cell *matHeaderCellDef> Nuemero de cuota </th>
+                <td mat-cell *matCellDef="let element"> {{element.cuotas}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="valor_cmes">
+                <th mat-header-cell *matHeaderCellDef> Valor cuota mes </th>
+                <td mat-cell *matCellDef="let element"> {{element.valor_cmes}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="nmid_seguro">
+                <th mat-header-cell *matHeaderCellDef> Seguro </th>
+                <td mat-cell *matCellDef="let element"> {{element.nmid_seguro}} </td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                showFirstLastButtons
+                aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+    
 
 </div>

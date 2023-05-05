@@ -1,23 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, FormRecord } from '@angular/forms';
+import {MatTableDataSource} from '@angular/material/table';
 import { PagosService } from 'src/app/services/pagos.service';
-
-export interface Pagos {
-  f_pagos: String;
-  cuotas: number;
-  valor_cmes: number;
-  nmid_seguro: number;
-}
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-pagos',
   templateUrl: './pagos.component.html',
   styleUrls: ['./pagos.component.scss']
 })
-export class PagosComponent implements OnInit {
+export class PagosComponent implements OnInit{
   formGroup!: FormGroup;
   datosPagos: any;
-  displayedColumns: string[] = ['documento','nombretom','f_pago', 'cuotas', 'valor_cmes', 'nmid_seguro', 'accion'];
+  displayedColumns: string[] = ['documento','nombretom','f_pago', 'cuotas', 'valor_cmes', 'nmid_seguro'];
   years = Array.from({length: 31}, (_, i) => 2000 + i); // Arreglo con años del 2000 al 2030
   months = [
     { name: 'Enero', value: 1 },
@@ -33,6 +28,8 @@ export class PagosComponent implements OnInit {
     { name: 'Noviembre', value: 11 },
     { name: 'Diciembre', value: 12 },
   ];
+  
+
 
   constructor(private pagosService: PagosService) { }
 
@@ -47,21 +44,47 @@ export class PagosComponent implements OnInit {
 
     this.pagosService.getPagos()
     .subscribe(dato =>{
-      this.datosPagos = dato.dato;
+      this.datosPagos = new MatTableDataSource(dato.dato);
+      this.datosPagos!.paginator = this.paginator;
       console.log(dato);
     });
   }
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   liquidar(form: FormGroup) {
     let doc = form.get('documento1')?.value;
     let fecha = form.get('fecha')?.value;
-    console.log(fecha,doc);
     
     this.pagosService.liquidarPago(doc,fecha)
     .subscribe(dato =>{
-      alert("Pago de "+fecha.months+" liqudado");
+      this.refresh();
+      alert("Pago Liquidado");
 
     })
   }
+
+  filtrar(form: FormGroup) {
+    let doc = form.get('documento2')?.value;
+    let año = form.get('selectedYear')?.value;
+    let mes = form.get('selectedMonth')?.value;
+    console.log(mes, año);
+    
+
+    this.pagosService.filtrarPago(doc,año,mes)
+    .subscribe(datos =>{
+      this.datosPagos = datos.dato;
+    });
+  }
+
+  refresh() {
+    this.formGroup.reset();
+    this.pagosService.getPagos()
+    .subscribe(dato =>{
+      this.datosPagos = new MatTableDataSource(dato.dato);
+      this.datosPagos!.paginator = this.paginator;
+    });
+  }
+
 
 }

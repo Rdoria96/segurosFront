@@ -1,27 +1,29 @@
-.mat-datepicker-toggle {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin-top: -12px;
-}
-
 .formulario {
     margin-top: 2%;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin-bottom: 3%;
+    margin-bottom: 1%;
     .liquidar {
         float: left;
         width: 50%;
         mat-form-field {
             margin-right: 1%;
+            .datepicker-toggle {
+                position: absolute;
+                right: 0;
+                top: 0;
+                margin-top: -12px;
+            }
         }
     }
     .filtrar {
         float: right;
         width: 50%;
         mat-form-field {
+            margin-right: 1%;
+        }
+        button {
             margin-right: 1%;
         }
     }

@@ -15,9 +15,12 @@ export class PagosService {
     return this.service.get(`${this.server}/pagos/mostarpagos`);
   }
 
-  liquidarPago(doc: string, fecha: Date) {
-    const params = {documento: doc, fecha: fecha};
+  liquidarPago(documento: string, fecha: String) {
+    const params = {documento: documento, fecha: fecha};
     return this.service.post(`${this.server}/pagos/generate`,params);
-    
+  }
+
+  filtrarPago(documento: String, año: number, mes: number): Observable<any> {
+    return this.service.get(`${this.server}/pagos/pagosfiltrados/${año},${mes},${documento}`);
   }
 }
