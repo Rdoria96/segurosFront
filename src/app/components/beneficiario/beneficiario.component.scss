@@ -1,3 +1,7 @@
+h1 {
+  margin-top: 2%;
+}
+
 .example-section {
   margin: 12px 0;
 }
@@ -5,24 +9,28 @@
 .example-margin {
   margin: 0 12px;
 }
+
+.example-form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
 ul {
   list-style-type: none;
   margin-top: 4px;
 }
-body{
-  text-align: center;
-  padding: 7%;
+.body {
+  width: 97%;
+  margin: auto;
 }
 #table {
   border-radius: 1rem;
-  margin-top: 2%;
+  margin-top: 1%;
   width: 90%;
-  margin-left: 5%;
   background-color: white;
   box-shadow: 0px 2px 10px -6px black;
-
 }
-tbody{
+tbody {
   border-radius: 1rem;
 }
 
@@ -36,24 +44,22 @@ td {
   background-color: white;
   border-color: white;
 }
-.mat-label{
-margin-top: 4%;
-margin-right: 12px;
-}
-.mat-form-field{
+.mat-label {
   margin-top: 4%;
   margin-right: 12px;
 }
-.mat-flat-button{
-  margin-top: 4%;
+.mat-form-field {
   margin-right: 12px;
 }
-.mat-datepicker-toggle{
+.mat-raised-button {
+  margin-top: 3px;
+  height: 58px;
+  width: 200px;
+}
+.mat-datepicker-toggle {
   position: absolute;
   right: 0;
   top: 0;
-  margin-top: -12px;
-
 }
 .edit {
   background-color: rgba(71, 115, 178, 255);
@@ -81,25 +87,4 @@ section {
   font-size: 14px;
   margin-left: 8px;
   min-width: 120px;
-}
-
-.example-button-row {
-  display: table-cell;
-  max-width: 600px;
-}
-
-.example-button-row .mat-mdc-button-base {
-  margin: 8px 8px 8px 0;
-}
-
-.example-flex-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.example-button-container {
-  display: flex;
-  justify-content: center;
-  width: 120px;
 }

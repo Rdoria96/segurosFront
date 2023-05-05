@@ -1,27 +1,24 @@
-<div class="container" style="width: 90%;margin: auto;">
+<div class="container">
     <h1 class="titulo">Reaseguradora</h1>
 
     <form class="formulario" [formGroup]="formGroup">
+        <mat-form-field appearance="outline" class="imputformulario">
+            <mat-label>NIT</mat-label>
+            <input matInput type="text" formControlName="nit">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline" class="imputformulario">
+            <mat-label>Razon social</mat-label>
+            <input matInput type="text" formControlName="razon_social">
+        </mat-form-field>
+        <br>
 
-
-
-            <mat-form-field appearance="fill" class="imputformulario">
-                <mat-label>NIT</mat-label>
-                <input matInput type="text" formControlName="nit">
-            </mat-form-field>
-            <br>
-            <mat-form-field appearance="fill" class="imputformulario">
-                <mat-label>Razon social</mat-label>
-                <input matInput type="text" formControlName="razon_social">
-            </mat-form-field>
-            <br>
-
-        <mat-form-field appearance="fill" class="imputformulario">
+        <mat-form-field appearance="outline" class="imputformulario">
             <mat-label>Monto del seguro</mat-label>
             <input matInput type="numeric" formControlName="monto_seguro">
         </mat-form-field>
         <br>
-        <mat-form-field appearance="fill" class="imputformulario">
+        <mat-form-field appearance="outline" class="imputformulario">
             <mat-label>Porcentaje de cobertura </mat-label>
             <input matInput type="numeric" formControlName="porcentaje_cober">
         </mat-form-field>
@@ -29,14 +26,12 @@
         <div class="botonGuardar">
             <button mat-raised-button color="primary" (click)="saveAseguradora(formGroup)">Guardar</button>
         </div>
-
     </form>
-    <br>
 
-    <table mat-table [dataSource]="datosReaseguradora" class="mat-elevation-z8" style="margin: auto; width: 90%;">
+    <table mat-table [dataSource]="datosReaseguradora" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
-              The actual rendered columns are set as a property on the row definition" -->
+            The actual rendered columns are set as a property on the row definition" -->
 
         <!-- Position Column -->
         <ng-container matColumnDef="nmid">

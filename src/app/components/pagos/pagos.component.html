@@ -5,11 +5,11 @@
 
         <div class="liquidar">
             <h4>Liquidar pago</h4>
-            <mat-form-field appearance="fill" class="example-form-field">
+            <mat-form-field appearance="outline" class="example-form-field">
                 <mat-label>No. cedula</mat-label>
                 <input matInput type="text" formControlName="documento1">
             </mat-form-field>
-            <mat-form-field appearance="fill" class="example-form-field">
+            <mat-form-field appearance="outline" class="example-form-field">
                 <mat-label>Fecha de pago </mat-label>
                 <input matInput [matDatepicker]="picker1" formControlName="fecha">
                 <mat-hint>DD/MM/YYYY</mat-hint>
@@ -24,17 +24,17 @@
         
         <div class="filtrar">
             <h4>Buscar pago</h4>
-            <mat-form-field appearance="fill" class="example-form-field">
+            <mat-form-field appearance="outline" class="example-form-field">
                 <mat-label>No. cedula</mat-label>
                 <input matInput type="text" formControlName="documento2">
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
                 <mat-label>Selecciona un mes:</mat-label>
                 <mat-select formControlName="selectedMonth">
                     <mat-option *ngFor="let month of months" [value]="month.value">{{ month.name }}</mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
                 <mat-label>Selecciona un año:</mat-label>
                 <mat-select formControlName="selectedYear">
                     <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>

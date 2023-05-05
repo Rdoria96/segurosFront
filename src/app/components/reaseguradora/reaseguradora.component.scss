@@ -1,19 +1,24 @@
-
-.titulo{
-display: flex;
-justify-content: center;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-margin: 20px;
+.container {
+    .titulo{
+        margin-top: 20px;
+    }
+    width: 90%;
+    margin: auto;
+    .formulario{
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        mat-form-field {
+            margin-right: 2%;
+        }
+    }
+    table {
+        width: 100%;
+    }
 }
 
 
-.formulario{
 
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
 
 
 

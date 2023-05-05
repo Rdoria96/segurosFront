@@ -1,8 +1,10 @@
 .container {
   width: 90%;
   margin-top: 2%;
-  justify-content: space-around;
   display: flex;
+  .title {
+    justify-content: left;
+  }
 
   h1 {
     font-size: 30px;

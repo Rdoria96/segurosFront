@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { FormControl, FormGroup, FormRecord } from '@angular/forms';
 import {MatTableDataSource} from '@angular/material/table';
 import { PagosService } from 'src/app/services/pagos.service';
@@ -30,7 +30,6 @@ export class PagosComponent implements OnInit{
   ];
   
 
-
   constructor(private pagosService: PagosService) { }
 
   ngOnInit(): void {
@@ -46,7 +45,6 @@ export class PagosComponent implements OnInit{
     .subscribe(dato =>{
       this.datosPagos = new MatTableDataSource(dato.dato);
       this.datosPagos!.paginator = this.paginator;
-      console.log(dato);
     });
   }
 

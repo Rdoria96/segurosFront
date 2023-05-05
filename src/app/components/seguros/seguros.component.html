@@ -1,34 +1,34 @@
 <div class="container">
   <form [formGroup]="myForm" (ngSubmit)="guardar(myForm)">
     <div class="header">
-      <h1 class="title">REGISTRO SEGUROS</h1>
+      <h1 class="title">Seguros</h1>
     </div>
     <div class="seguro">
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Tipo seguro</mat-label>
         <input matInput formControlName="tipo_seguro">
       </mat-form-field>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Valor seguro</mat-label>
         <input matInput formControlName="valor">
       </mat-form-field>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Descripcion</mat-label>
         <input matInput formControlName="descripcion">
       </mat-form-field>
-      <mat-form-field color="accent" appearance="fill">
+      <mat-form-field color="accent" appearance="outline">
         <mat-label>Fecha inicial</mat-label>
         <input matInput [matDatepicker]="picker1" formControlName="f_inicial">
         <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
-      <mat-form-field color="accent" appearance="fill">
+      <mat-form-field color="accent" appearance="outline">
         <mat-label>Fecha final</mat-label>
         <input matInput [matDatepicker]="picker2" formControlName="f_final">
         <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2 color="primary"></mat-datepicker>
       </mat-form-field>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Tomador</mat-label>
         <mat-select formControlName="tomador">
           <mat-option *ngFor="let t of datosTomador" [value]="t.nmid">
@@ -36,7 +36,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Reaseguradora</mat-label>
         <mat-select formControlName="reaseguradora">
           <mat-option *ngFor="let r of datosReaseguradora" [value]="r.nmid">

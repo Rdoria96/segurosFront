@@ -1,142 +1,141 @@
-<body>
-  <h1>REGISTRO DE BENEFICIARIO</h1>
+<div class="body">
+  <h1>Beneficiarios</h1>
 
-    <form class="example-form" id="from" [formGroup]="myFrom">
-      <mat-form-field appearance="fill">
-        <mat-label>Tipo de Documento</mat-label>
-        <mat-select formControlName="tipo_doc">
-          <mat-option>None</mat-option>
-          <mat-option value="CC">Cedula de ciudadania</mat-option>
-          <mat-option value="TI">Tarje de Identidad</mat-option>
-          <mat-option value="CE">Cedula de Extranjeria</mat-option>
-          <mat-option value="PA">Pasaporte</mat-option>
-          <mat-option value="RC">Registro Civil</mat-option>
-        </mat-select>
-      </mat-form-field>
+  <form class="example-form" id="from" [formGroup]="myFrom">
+    <mat-form-field appearance="outline">
+      <mat-label>Tipo de Documento</mat-label>
+      <mat-select formControlName="tipo_doc">
+        <mat-option>None</mat-option>
+        <mat-option value="CC">Cedula de ciudadania</mat-option>
+        <mat-option value="TI">Tarje de Identidad</mat-option>
+        <mat-option value="CE">Cedula de Extranjeria</mat-option>
+        <mat-option value="PA">Pasaporte</mat-option>
+        <mat-option value="RC">Registro Civil</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Documento</mat-label>
-        <textarea formControlName="documento" matInput placeholder="documento"></textarea>
-      </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Documento</mat-label>
+      <input formControlName="documento" matInput placeholder="documento">
+    </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Nombre</mat-label>
-        <textarea formControlName = "nombre" matInput placeholder="nombre"></textarea>
-      </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input formControlName="nombre" matInput placeholder="nombre">
+    </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Apellido</mat-label>
-        <textarea formControlName = "apellido" matInput placeholder="apellido" ></textarea>
-      </mat-form-field>
-      <mat-form-field color="accent" appearance="fill">
-        <mat-label>Fecha de Nacimiento</mat-label>
-        <input formControlName = "f_naci" matInput [matDatepicker]="picker1">
-        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
-        <mat-datepicker #picker1></mat-datepicker>
-      </mat-form-field>
-      <div>
-      <mat-form-field class="example-full-width">
-        <mat-label>Parentezco</mat-label>
-        <textarea formControlName = "parentezco" matInput placeholder="parentezco"></textarea>
-      </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Apellido</mat-label>
+      <input formControlName="apellido" matInput placeholder="apellido">
+    </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Ocupacion</mat-label>
-        <textarea formControlName = "ocupacion" matInput placeholder="ocupacion"></textarea>
-      </mat-form-field>
+    <mat-form-field color="primary" appearance="outline">
+      <mat-label>Fecha de Nacimiento</mat-label>
+      <input formControlName="f_naci" matInput [matDatepicker]="picker1">
+      <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Direccion</mat-label>
-        <textarea formControlName = "direccion" matInput placeholder="direccion"></textarea>
-      </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Parentezco</mat-label>
+      <input formControlName="parentezco" matInput placeholder="parentezco">
+    </mat-form-field>
 
-       <mat-form-field class="example-full-width">
-        <mat-label>Telefono</mat-label>
-        <textarea formControlName = "telefono" matInput placeholder="telefono"></textarea>
-      </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Ocupacion</mat-label>
+      <input formControlName="ocupacion" matInput placeholder="ocupacion">
+    </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Correo</mat-label>
-        <textarea formControlName = "correo" matInput placeholder="correo"></textarea>
-      </mat-form-field>
-      <div>
-      <mat-form-field class="example-full-width">
-        <mat-label>Porcentaje Afiliacion</mat-label>
-        <textarea formControlName = "porcentaje_afi" matInput placeholder="porcentaje_afi"></textarea>
-      </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Direccion</mat-label>
+      <input formControlName="direccion" matInput placeholder="direccion">
+    </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-        <mat-label>Nombre Banco</mat-label>
-        <textarea  formControlName = "nombre_banco" matInput placeholder="nombre_banco"></textarea>
-      </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Telefono</mat-label>
+      <input formControlName="telefono" matInput placeholder="telefono">
+    </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Nombre Cuenta</mat-label>
-        <textarea formControlName = "numero_cuenta" matInput placeholder="numero_cuenta"></textarea>
-      </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Correo</mat-label>
+      <input formControlName="correo" matInput placeholder="correo">
+    </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Tomador</mat-label>
-        <mat-select formControlName="tomador">
-          <mat-option *ngFor="let t of datosTomador" [value]="t.nmid">
-            {{t.documento}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Porcentaje Afiliacion</mat-label>
+      <input formControlName="porcentaje_afi" matInput placeholder="porcentaje_afi">
+    </mat-form-field>
 
-    </div>
-    <button mat-flat-button color="primary" (click)="guardar(myFrom)" (click)="refresh()">GUARDAR</button>
-    </div>
-    </form>
-  </body>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Nombre Banco</mat-label>
+      <input formControlName="nombre_banco" matInput placeholder="nombre_banco">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Nombre Cuenta</mat-label>
+      <input formControlName="numero_cuenta" matInput placeholder="numero_cuenta">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Tomador</mat-label>
+      <mat-select formControlName="tomador">
+        <mat-option *ngFor="let t of datosTomador" [value]="t.nmid">
+          {{t.documento}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="guardar(myFrom)" (click)="refresh()">Guardar</button>
+  </form>
+
   <div class="tabla">
-  <table id="table" class="table table-bordered hover table-borderless">
-    <thead>
-      <tr>
-        <th style="text-align:center">#</th>
-        <th style="text-align:center">Tipo de documento</th>
-        <th style="text-align:center">Documento</th>
-        <th style="text-align:center">Nombre</th>
-        <th style="text-align:center">Apellido</th>
-        <th style="text-align:center">f_naci</th>
-        <th style="text-align:center">Prentezco</th>
-        <th style="text-align:center">Ocupacion</th>
-        <th style="text-align:center">Direccion</th>
-        <th style="text-align:center">Telefono</th>
-        <th style="text-align:center">Correo</th>
-        <th style="text-align:center">Porcentaje de afiliacion</th>
-        <th style="text-align:center">Nombre de Banco</th>
-        <th style="text-align:center">Numero Cuenta</th>
-        <th style="text-align:center">Tomador</th>
-        <th style="text-align:center">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="text-align:center;" *ngFor="let item of datobeneficiario">
-        <td style="text-align:center">{{item.nmid}}</td>
-        <td style=" text-align: center">{{item.tipo_doc}}</td>
-        <td style=" text-align: center">{{item.documento}}</td>
-        <td style=" text-align: center">{{item.nombre}}</td>
-        <td style=" text-align: center">{{item.apellido}}</td>
-        <td style=" text-align: center">{{item.f_naci}}</td>
-        <td style=" text-align: center">{{item.parentezco}}</td>
-        <td style="text-align: center;">{{item.ocupacion}}</td>
-        <td style="text-align: center;">{{item.direccion}}</td>
-        <td style="text-align: center;">{{item.telefono}}</td>
-        <td style="text-align: center;">{{item.correo}}</td>
-        <td style="text-align: center;">{{item.porcentaje_afi}}</td>
-        <td style="text-align: center;">{{item.nombre_banco}}</td>
-        <td style="text-align: center;">{{item.numero_cuenta}}</td>
-        <td style="text-align: center;">{{item.documento_tom}}</td>
-        <td><button mat-icon-button color="primary" (click)="mostrar(item)" >
-          <mat-icon>edit</mat-icon>
-        </button>
-          <button mat-icon-button color="warn" (click)="eliminar(item.nmid)" (click)="refresh()" >
-            <mat-icon>delete</mat-icon>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <table id="table" class="table table-bordered hover table-borderless">
+      <thead>
+        <tr>
+          <th style="text-align:center">#</th>
+          <th style="text-align:center">Tipo de documento</th>
+          <th style="text-align:center">Documento</th>
+          <th style="text-align:center">Nombre</th>
+          <th style="text-align:center">Apellido</th>
+          <th style="text-align:center">f_naci</th>
+          <th style="text-align:center">Prentezco</th>
+          <th style="text-align:center">Ocupacion</th>
+          <th style="text-align:center">Direccion</th>
+          <th style="text-align:center">Telefono</th>
+          <th style="text-align:center">Correo</th>
+          <th style="text-align:center">Porcentaje de afiliacion</th>
+          <th style="text-align:center">Nombre de Banco</th>
+          <th style="text-align:center">Numero Cuenta</th>
+          <th style="text-align:center">Tomador</th>
+          <th style="text-align:center">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="text-align:center;" *ngFor="let item of datobeneficiario">
+          <td style="text-align:center">{{item.nmid}}</td>
+          <td style=" text-align: center">{{item.tipo_doc}}</td>
+          <td style=" text-align: center">{{item.documento}}</td>
+          <td style=" text-align: center">{{item.nombre}}</td>
+          <td style=" text-align: center">{{item.apellido}}</td>
+          <td style=" text-align: center">{{item.f_naci}}</td>
+          <td style=" text-align: center">{{item.parentezco}}</td>
+          <td style="text-align: center;">{{item.ocupacion}}</td>
+          <td style="text-align: center;">{{item.direccion}}</td>
+          <td style="text-align: center;">{{item.telefono}}</td>
+          <td style="text-align: center;">{{item.correo}}</td>
+          <td style="text-align: center;">{{item.porcentaje_afi}}</td>
+          <td style="text-align: center;">{{item.nombre_banco}}</td>
+          <td style="text-align: center;">{{item.numero_cuenta}}</td>
+          <td style="text-align: center;">{{item.documento_tom}}</td>
+          <td><button mat-icon-button color="primary" (click)="mostrar(item)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="eliminar(item.nmid)" (click)="refresh()">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   <div>
-
+</div>

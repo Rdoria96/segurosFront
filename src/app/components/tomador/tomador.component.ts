@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TomadorService } from 'src/app/services/tomador.service';
 import { FormGroup, FormControl } from '@angular/forms'
-import { Tomador } from 'src/app/interfaces/tomador';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 export interface PeriodicElement {
   name: string;
@@ -18,11 +19,10 @@ export interface PeriodicElement {
 export class TomadorComponent implements OnInit {
   formGroup!: FormGroup;
   datosTomador: any;
-
   displayedColumns: string[] = ['nmid', 'documento', 'tipo_doc', 'nombre', 'apellido', 'direccion', 'telefono', 'ocupacion', 'correo', 'f_naci', 'accion'];
 
   constructor(private tomService: TomadorService) { }
-  //Metodo automatico
+
   ngOnInit(): void {
     this.formGroup = new FormGroup({
       nmid: new FormControl(),
@@ -39,9 +39,12 @@ export class TomadorComponent implements OnInit {
     //Listar Tomadores    
     this.tomService.getTomador().
       subscribe(dato => {
-        this.datosTomador = dato.dato;
+        this.datosTomador = new MatTableDataSource(dato.dato);
+        this.datosTomador.paginator = this.paginator;
       });
   }
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   //Eliminar tomador
   eliminar(id:number) {
@@ -57,9 +60,11 @@ export class TomadorComponent implements OnInit {
     this.formGroup.reset();
     this.tomService.getTomador().
       subscribe(dato => {
-        this.datosTomador = dato.dato;
+        this.datosTomador = new MatTableDataSource>(dato.dato);
+        this.datosTomador.paginator = this.paginator;
       })
   }
+
   // Guardar Tomador
   saveTomador(form: FormGroup) {
     if (this.formGroup.valid) {
@@ -89,5 +94,14 @@ export class TomadorComponent implements OnInit {
       correo: datos.correo,
       f_naci: datos.f_naci      
     });
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.datosTomador.filter = filterValue.trim().toLowerCase();
+
+    if (this.datosTomador.paginator) {
+      this.datosTomador.paginator.firstPage();
+    }
   }
 }

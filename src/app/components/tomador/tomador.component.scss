@@ -1,33 +1,30 @@
-
-.titulo{
-    display: flex;
+.container {
     justify-content: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 20px;
+    .titulo {
+        display: flex;
+        justify-content: left;
     }
-    .formulario{
+    .formulario {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        .imputformulario {
+            margin-right: 1%;
+        }
+        .mat-datepicker-toggle {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
     }
-
-    .imputformulario{
-        margin-right: 1%;
+    .filtro{
+        width: 30%;
+        margin-left: 1%;
     }
-    
-    .botonGuardar{
+    table {
+        width: 100%;
+    }
+    .botonGuardar {
         padding-top: 15px;
     }
-    
-    .acciones{
-        display: flex;
-        justify-content: space-around;
-        
-    }
-
-    .mat-datepicker-toggle{
-        position: absolute;
-        right: 0;
-        top: 0;
-        margin-top: -12px;
-      
-      }
+}
