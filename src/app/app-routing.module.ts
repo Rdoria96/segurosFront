@@ -43,12 +43,6 @@ const routes: Routes = [
         component: TomadorComponent
 
       },
-            {
-        path: 'tomador',
-        component: TomadorComponent
-
-      },
-
       {
         path: 'siniestro',
         component: SiniestroComponent
